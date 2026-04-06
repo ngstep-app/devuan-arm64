@@ -12,5 +12,5 @@ RUN curl -fsSL http://deb.devuan.org/merged/pool/DEVUAN/main/d/devuan-keyring/de
     && rm /tmp/devuan-keyring.deb
 
 RUN curl -fsSL http://deb.devuan.org/merged/pool/DEVUAN/main/d/debootstrap/debootstrap_1.0.141devuan1_all.deb -o /tmp/debootstrap-devuan.deb \
-    && dpkg -i --force-overwrite /tmp/debootstrap-devuan.deb \
+    && dpkg -i --force-overwrite --force-depends /tmp/debootstrap-devuan.deb \
     && rm /tmp/debootstrap-devuan.deb
